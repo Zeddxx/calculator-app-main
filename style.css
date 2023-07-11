@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Open+Sans&display=swap');
+
+:root{
+    /* theme 1 */
+
+    /* Backgrounds */
+    --t1-very-dark-desaturated-blue-main-bg: hsl(222, 26%, 31%);
+    --t1-toggle-btn-bg: hsl(223, 31%, 20%);
+    --t1-screen-bg: hsl(224, 36%, 15%);
+
+    /* Keys */
+    --t1-keypad-keys-bg: hsl(225, 21%, 49%);
+    --t1-keypad-keys-shadow: hsl(224, 28%, 35%);
+    --t1-red-key-bg-nd-toggle: hsl(6, 63%, 50%);
+    --t1-dark-red: hsl(6, 70%, 34%);
+    --t1-light-greyish-orange-key-bg: hsl(30, 25%, 89%);
+    --t1-grayish-orange-key-shadow: hsl(28, 16%, 65%);
+
+    /* Text */
+    --t1-text-color: hsl(221, 14%, 31%);
+    --t1-white: hsl(0, 0%, 100%);
+
+    /* Theme 2 */
+    --t2-bg-main: hsl(0, 0%, 90%);
+    --t2-toggle-bg-nd-keypad-bg: hsl(0, 5%, 81%);
+    --t2-screen-bg: hsl(0, 0%, 93%);
+
+    /* Keys */
+    --t2-key-bg: hsl(185, 42%, 37%);
+    --t2-key-shadow:  hsl(185, 58%, 25%);
+    --t2-key-bg-toggle: hsl(25, 98%, 40%);
+    --t2-dark-orange-key-shadow: hsl(25, 99%, 27%);
+    --t2-light-grayish-yellow-key-bg: hsl(45, 7%, 89%);
+    --t2-dark-grayish-orange-key-shadow: hsl(35, 11%, 61%);
+
+    /* Text */
+    --t2-very-dark-grayish-yellow:  hsl(60, 10%, 19%);
+    --t2-white: hsl(0, 0%, 100%);
+
+    /* Theme 3 */
+    --t3-very-dark-violet-main-bg: hsl(268, 75%, 9%);
+    --t3-very-dark-violet-toggle-keypad: hsl(268, 71%, 12%);
+
+    /* keys */
+    --t3-key-bg-3-1:  hsl(281, 89%, 26%);
+    --t3-key-shadow-3-1: hsl(285, 91%, 52%);
+    --t3-key-bg-toggle-3-1: hsl(176, 100%, 44%);
+    --t3-key-shadow-3-2: hsl(177, 92%, 70%);
+    --t3-key-bg-3-2: hsl(268, 47%, 21%);
+    --t3-key-shadow-3-3: hsl(290, 70%, 36%);
+
+    /* Text */
+    --t3-light-yellow: hsl(52, 100%, 62%);
+    --t3-very-dark-blue: hsl(198, 20%, 13%);
+    --t3-white: hsl(0, 0%, 100%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+.cursor{
+    position: fixed;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background: var(--t1-keypad-keys-bg);
+    filter: blur(80px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.main-body{
+    background: var(--t1-very-dark-desaturated-blue-main-bg);
+    /* background: var(--t2-bg-main); */
+    /* background: var(--t3-very-dark-violet-main-bg); */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "League Spartan", sans-serif;
+    gap: 1.5rem;
+}
+.main-body > div{
+    display: flex;
+    justify-content: center;
+}
+.maxWidth{
+    max-width: 378px;
+}
+.navbar-main{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.logo > h1{
+    color: var(--t1-white);
+    /* color: var(--t3-light-yellow); */
+    font-size:2.2rem;
+    margin: 0;
+}
+.theme{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    width: 50%;
+    justify-content: space-between;
+}
+.theme > p{
+    margin: 0;
+    color: var(--t1-white);
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.grp1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.main-toggle-btn{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background: var(--t1-toggle-btn-bg);
+    border-radius: 2rem;
+    /* background: var(--t2-toggle-bg-nd-keypad-bg) !important; */
+    /* background: var(--t3-very-dark-violet-toggle-keypad); */
+}
+
+.grp1 > .numbers{
+    display: flex;
+    justify-content: space-around;
+}
+.grp1 > .numbers > p{
+    margin: 0;
+    font-size: .9rem;
+    color: var(--t1-white);
+}
+.grp1 > .main-toggle-btn > .dot{
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    top: 50%;
+    left: -5%;
+    /* left: 29%; */
+    /* left: 64%; */
+    transform: translate(50%, -50%);
+    background: var(--t1-red-key-bg-nd-toggle);
+    /* background: var(--t2-key-bg-toggle); */
+    transition: left .3s ease;
+}
+/* for calculator input and output */
+.input-div{
+    height: 6rem;
+    margin-top: .4rem;
+}
+.forInput{
+    width: 100%;
+    height: 100%;
+    background: var(--t1-screen-bg);
+    border-radius: 1rem;
+    padding: 0 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.forInput::-webkit-scrollbar{
+    display: none;
+}
+.forInput > p{
+    margin: 0;
+    width: 100%;
+    font-size: 3rem;
+    text-align: right;
+    color: var(--t1-white);
+}
+.buttons-div{
+    width: 100%;
+    padding: 1.3rem;
+    border-radius: 1rem;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    background: var(--t1-toggle-btn-bg);
+}
+.keys-div{
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+}
+.key-btn{
+    height: 4.3rem;
+    width: 4.3rem;
+    border-radius: .5rem;
+    box-shadow: 0px -4px var(--t1-grayish-orange-key-shadow) inset;
+    font-size: 2.1rem;
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    outline: none;
+    background: var(--t1-light-greyish-orange-key-bg);
+    /* background: var(--t2-light-grayish-yellow-key-bg); */
+    /* background: var(--t3-key-bg-3-2); */
+    color: var(--t1-text-color);
+    z-index: 2;
+}
+.equal-div{
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+    gap: 4%;
+}
+.equal-div > button{
+    width: 48%;
+}
+#delete{
+    background: var(--t1-keypad-keys-bg);
+    /* background: var(--t3-key-bg-3-1); */
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0px -4px var(--t1-very-dark-desaturated-blue-main-bg) inset;
+}
+#multiply{
+    font-size: 1.5rem;
+}
+#reset{
+    background: var(--t1-keypad-keys-bg);
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0px -4px var(--t1-very-dark-desaturated-blue-main-bg) inset;
+}
+#equal{
+    /* background: var(--t1-red-key-bg-nd-toggle); */
+    /* background: var(--t2-key-bg); */
+    background: var(--t2-key-bg-toggle);
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0px -4px var(--t1-dark-red) inset;
+    /* box-shadow: 0 -4px var(--t2-dark-orange-key-shadow) inset; */
+}
