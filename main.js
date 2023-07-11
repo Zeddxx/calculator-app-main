@@ -97,56 +97,75 @@ btn.addEventListener('click', changePosition);
 
 // for calculation
 function dis(val) {
-    const outputElement = document.querySelector('.output');
-    let outputText = outputElement.innerText;
-  
-    // Remove leading zero if it exists
-    if (outputText === '0') {
-      outputText = '';
-    }
-  
-    // Append the new value to the outputText
-    outputText += val;
-  
-    // Update the innerText of the outputElement
-    outputElement.innerText = outputText;
-  }
-  function myFunction(event){
-    if(event.key == '0' || event.key == '1' || event.key == '2' || event.key == '3' || event.key == '4' || event.key == '5' || event.key =='6' || event.key == '7' || event.key == '8' || event.key =='9' || event.key == '+' || event.key == '-' || event.key == '*' || event.key == '/'){
-        document.querySelector('.output').innerText += event.key;
-    }else if(event.key == 'String'){
-        alert('enter a number');
-    }
-  }
-  function solve() {
-    let x = document.querySelector('.output').innerText;
-    // x = Number.parseInt(x);
-        let y = math.evaluate(x);
-        document.querySelector('.output').innerText = y;
-  }
-  
-  function clr(){
-    document.querySelector('.output').innerText = '0';
+  const outputElement = document.querySelector('.output');
+  let outputText = outputElement.innerText;
+
+  // Remove leading zero if it exists
+  if (outputText === '0') {
+    outputText = '';
   }
 
-  function del() {
-    const outputElement = document.querySelector('.output');
-    let outputText = outputElement.innerText;
-  
-    // Remove the last character from the outputText
-    outputText = outputText.slice(0, -1);
-  
-    // If the outputText is empty, set it to '0'
-    if (outputText === '') {
-      outputText = '0';
-    }
-  
-    // Update the innerText of the outputElement
-    outputElement.innerText = outputText;
+  // Append the new value to the outputText
+  outputText += val;
+
+  // Update the innerText of the outputElement
+  outputElement.innerText = outputText;
+}
+
+function myFunction(event) {
+  if (
+    event.key == '0' ||
+    event.key == '1' ||
+    event.key == '2' ||
+    event.key == '3' ||
+    event.key == '4' ||
+    event.key == '5' ||
+    event.key == '6' ||
+    event.key == '7' ||
+    event.key == '8' ||
+    event.key == '9' ||
+    event.key == '+' ||
+    event.key == '-' ||
+    event.key == '*' ||
+    event.key == '/'
+  ) {
+    document.querySelector('.output').innerText += event.key;
+  } else if (event.key == 'String') {
+    alert('Enter a number');
+  }
+}
+
+function solve() {
+  let x = document.querySelector('.output').innerText;
+  try {
+    let y = math.evaluate(x);
+    document.querySelector('.output').innerText = y;
+  } catch (error) {
+    document.querySelector('.output').innerText = 'Invalid!';
+  }
+}
+
+function clr() {
+  document.querySelector('.output').innerText = '0';
+}
+
+function del() {
+  const outputElement = document.querySelector('.output');
+  let outputText = outputElement.innerText;
+
+  // Remove the last character from the outputText
+  outputText = outputText.slice(0, -1);
+
+  // If the outputText is empty, set it to '0'
+  if (outputText === '') {
+    outputText = '0';
   }
 
-  
-  document.addEventListener('mousemove', (e) => {
-    cursorEl.style.left = e.clientX - 60 + 'px';
-    cursorEl.style.top = e.clientY - 60 + 'px';
-  })
+  // Update the innerText of the outputElement
+  outputElement.innerText = outputText;
+};
+
+document.addEventListener('mousemove', (e) => {
+  cursorEl.style.left = e.clientX - 60 + 'px';
+  cursorEl.style.top = e.clientY - 60 + 'px';
+});
