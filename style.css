@@ -62,6 +62,9 @@
 body{
     position: relative;
 }
+.selector {
+    touch-action: manipulation;
+ }
 .cursor{
     position: fixed;
     height: 120px;
