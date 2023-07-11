@@ -17,7 +17,7 @@ const keyBtn = document.querySelectorAll('.key-btn');
 let cursorEl = document.querySelector('.cursor');
 
 let currentPosition = 0;
-const positions = [ -5,29, 64, 29];
+const positions = [ -3,25, 60, 25];
 
 function forTheme1(){
   theme1Color.forEach(theme => {
