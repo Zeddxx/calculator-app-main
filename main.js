@@ -83,10 +83,10 @@ function forTheme3(){
 function changePosition() {
   currentPosition = (currentPosition + 1) % positions.length;
   dot.style.left = `${positions[currentPosition]}%`;
-  if(positions[currentPosition] === 29){
+  if(positions[currentPosition] === 25){
     forTheme2();
 
-  }else if(positions[currentPosition] === 64){
+  }else if(positions[currentPosition] === 60){
     forTheme3();
   }else{
     forTheme1();
